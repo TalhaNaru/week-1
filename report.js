@@ -1,0 +1,1 @@
+export const formatLine = ({ name, posts }) => `${name.padEnd(20)} ${posts}`;
