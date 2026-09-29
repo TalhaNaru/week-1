@@ -1,21 +1,10 @@
 {
-  "name": "week-1",
+  "name": "user-insights-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "CLI that reports on JSONPlaceholder users, posts and todos",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TalhaNaru/week-1.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/TalhaNaru/week-1/issues"
-  },
-  "homepage": "https://github.com/TalhaNaru/week-1#readme"
+    "start": "node index.js"
+  }
 }
