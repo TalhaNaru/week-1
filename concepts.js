@@ -83,3 +83,71 @@ console.log(show(person));
 
 const posts = 5;
 console.log(`${fullname}has ${posts} posts,double is ${posts*2}`);                                        
+  
+
+                                        // --DAY 3--
+
+                                        // Map
+                
+const nums = [1,2,3,4,5,6];
+const doubled = nums.map((n) => n * 2);
+console.log(doubled);
+
+                                        // Filter
+
+
+const evens  = nums.filter((n) => n % 2 == 0);
+console.log(evens);
+
+                                        // Reduce
+
+const total = nums.reduce ((sum,n) => sum + n);
+console.log(total);
+
+                                        // Find,Some,Every
+
+const people = [
+    {name : "Ali", age : 17 },
+    {name : "Talha", age : 24 },
+    {name : "Ahmad", age : 24 },
+    {name : "Muzammil", age : 30 },
+];
+console.log(people.find((p) => p.name == "Talha"));
+console.log(people.some((p) => p.age < 18));
+console.log(people.every((p) => p.age >= 18));
+
+                                        // Sort
+
+console.log([1,4,9,5,10].sort());
+console.log ([1,4,9,5,10].sort((a,b) => a-b));  
+
+const SortedPeople = [...people] .sort(
+     (a,b) => a.age-b.age || a.name.localeCompare(b.name)
+);
+
+console.log(SortedPeople.map((p) => p.name));
+console.log(people.map((p) => p.name));
+
+                                         // Object Helpers
+
+const profile = {name : "Talha", age : 23, city : "Gujranwala"};  
+console.log(Object.keys(profile));
+console.log(Object.values(profile));
+console.log(Object.entries(profile));
+
+                                        // Optional chaining and Nullish handling
+
+const guest = {name : "Talha", };
+console.log(guest.address?.city);
+console.log(guest.address?.city??"Unknown");
+
+const zero = 0;
+console.log(zero || 10);
+console.log(zero ?? 10);
+
+                                        // Immutability
+
+const fruits = ["apple","strawberry"];
+const newfruits = [...fruits,"banana","mango"];
+console.log(fruits);
+console.log(newfruits);                                        
