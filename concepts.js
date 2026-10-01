@@ -151,3 +151,78 @@ const fruits = ["apple","strawberry"];
 const newfruits = [...fruits,"banana","mango"];
 console.log(fruits);
 console.log(newfruits);                                        
+
+                                        // --DAY 4--
+
+                                        // The Event Loop
+                                        
+console.log("START");
+   setTimeout(() =>
+     {console.log("Timer Done");
+     } , 0);
+console.log("END");                                        
+
+                                        // Promises, then and catch
+
+ const myPromise = new Promise((resolve,reject)=> {
+    const ok = true;
+    if (ok){
+        resolve("It worked");
+    }else {
+        resolve("It rejected");
+    }
+ });
+    myPromise
+        .then((value)=>console.log(value))
+        .catch((error)=>console.log(error))   
+        
+                                        // Promise.all
+    
+Promise.all([
+    fetch("https://jsonplaceholder.typicode.com/users").then((r) => r.json()),
+    fetch("https://jsonplaceholder.typicode.com/posts").then((r) => r.json()),
+    fetch("https://jsonplaceholder.typicode.com/todos").then((r) => r.json()),
+])  .then(([users,posts,todos]) =>{
+    console.log(users.length,posts.length,todos.length);
+});                                   
+
+                                        // Async and Await
+
+const getFirstUser = async() => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+    const user = await response.json();
+    console.log(user.name,user.email);
+};
+     getFirstUser();
+
+                                         // Error Handling With Try and Catch
+
+const getBadURL = async () => {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/wrong");
+        if(!response.ok){
+            throw new Error(`Request failed with status ${response.status}`);
+        }
+        const data = await response.json();
+        console.log(data);
+        }catch (error){
+            console.log("Caught:", error.message);
+        }
+            };
+         getBadURL();         
+         
+                                        // Fetching data from an API
+
+const getAllData = async () => {
+    try{
+        const  [users,posts,todos] = await Promise.all([
+            fetch("https://jsonplaceholder.typicode.com/users").then((r) => r.json()),
+            fetch("https://jsonplaceholder.typicode.com/posts").then((r) => r.json()),
+            fetch("https://jsonplaceholder.typicode.com/todos").then((r) => r.json()),
+        ]);
+        console.log(users.length,posts.length,todos.length);
+    } catch(error){
+        console.log("Caught",error.message);
+    }
+    };     
+        getAllData();                                   
