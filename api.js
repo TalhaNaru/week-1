@@ -8,7 +8,7 @@ const getjson = async(path) => {
     }
     return response.json
 }
-    export const fetchall = async () => {
+    export const fetchAll = async () => {
         const [users,posts,todos] = await Promise.all([
             getjson ("/users"),
             getjson ("/posts"),
