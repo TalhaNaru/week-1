@@ -1,4 +1,4 @@
-                                       // // // Week-1 Exercise
+                                     // // Week-1 Exercise
 
 const columns = [
   { label: "Name", width: 24, get: (r) => r.name },
