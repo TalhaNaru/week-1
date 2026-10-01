@@ -8,12 +8,11 @@ const getjson = async(path) => {
     }
     return response.json
 }
-    export const fetchAll = async () => {
-        const [users,posts,todos] = await Promise.all([
-            getjson ("/users"),
-            getjson ("/posts"),
-            getjson ("/todos"),
-        ]);
-    
-        return {users,posts,todos};
-    };
+  export const fetchAll = async () => {
+  const [users, posts, todos] = await Promise.all([
+    getJson("/users"),
+    getJson("/posts"),
+    getJson("/todos"),
+  ]);
+  return { users, posts, todos };
+};
